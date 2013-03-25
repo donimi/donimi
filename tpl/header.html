@@ -23,12 +23,23 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active">
-                <a href="/">Home</a>
+                <a href="/">reader</a>
+              </li>
+              <li>
+                <a href="/later">later</a>
+              </li>
+              <li>
+                <a href="/star">star</a>
               </li>
             </ul>
           </div>
+          <?php if(!empty($this->user)):?>
           <div class="logout butt" id="logout">logout</div>
-          <div class="user butt" id="user">lisces</div>
+          <div class="user butt" id="user"><?php echo $this->user['name'];?></div>
+          <?php else:?>
+          <div class="logout butt" id="login">login</div>
+          <div class="user butt" id="register">register</div>
+          <?php endif;?>
         </div>
       </div>
     </div>

@@ -18,8 +18,8 @@
 /**
 * Always have these classes available.
 */
-include_once dirname(__FILE__) . '/Filter.php';
-include_once dirname(__FILE__) . '/Plugin.php';
+include_once dirname(__FILE__) . '/Savant3/Filter.php';
+include_once dirname(__FILE__) . '/Savant3/Plugin.php';
 
 
 /**
@@ -728,7 +728,7 @@ class Savant3 {
 			break;
 		case 'resource':
 			// the Savant3 distribution resources
-			$this->addPath($type, dirname(__FILE__) . '/resources/');
+			$this->addPath($type, dirname(__FILE__) . '/Savant3/resources/');
 			break;
 		}
 		
@@ -1275,7 +1275,7 @@ class Savant3 {
 		// are we throwing exceptions?
 		if ($this->__config['exceptions']) {
 			if (! class_exists('Savant3_Exception', $autoload)) {
-				include_once dirname(__FILE__) . '/Exception.php';
+				include_once dirname(__FILE__) . '/Savant3/Exception.php';
 			}
 			throw new Savant3_Exception($code);
 		}
@@ -1291,7 +1291,7 @@ class Savant3 {
 		
 		// make sure the Savant3 error class is available
 		if (! class_exists('Savant3_Error', $autoload)) {
-			include_once dirname(__FILE__) . '/Error.php';
+			include_once dirname(__FILE__) . '/Savant3/Error.php';
 		}
 		
 		// return it
@@ -1325,7 +1325,7 @@ class Savant3 {
 			// make sure the Savant3 error class is available for
 			// comparison
 			if (! class_exists('Savant3_Error', $autoload)) {
-				include_once dirname(__FILE__) . '/Error.php';
+				include_once dirname(__FILE__) . '/Savant3/Error.php';
 			}
 			// now compare the parentage
 			$is = $obj instanceof Savant3_Error;

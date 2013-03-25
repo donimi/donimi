@@ -1,2 +1,22 @@
 <?php echo $this->header;?>
+<div id="content">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php for($i=0;$i<100;$i++):?>
+      <tr>
+        <td>Larry</td>
+        <td>Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+      <?php endfor;?>
+    </tbody>
+  </table>
+</div>
 <?php echo $this->footer;?>

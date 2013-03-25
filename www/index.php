@@ -7,6 +7,7 @@ define('WWW_DIR',    dirname(__FILE__)   . DIRECTORY_SEPARATOR);
 define('ROOT_DIR',   substr(WWW_DIR, 0, -4));
 define('API_DIR',    ROOT_DIR . 'api'    . DIRECTORY_SEPARATOR);
 define('APP_DIR',    ROOT_DIR . 'app'    . DIRECTORY_SEPARATOR);
+define('CACHE_DIR',  ROOT_DIR . 'cache'  . DIRECTORY_SEPARATOR);
 define('CMD_DIR',    ROOT_DIR . 'cmd'    . DIRECTORY_SEPARATOR);
 define('CONF_DIR',   ROOT_DIR . 'conf'   . DIRECTORY_SEPARATOR);
 define('CORE_DIR',   ROOT_DIR . 'core'   . DIRECTORY_SEPARATOR);
@@ -18,9 +19,14 @@ define('TPL_DIR',    ROOT_DIR . 'tpl'    . DIRECTORY_SEPARATOR);
 
 //autoload function
 spl_autoload_register(function($classname){
-  $classlower = strtolower($classname);
-  if($classname == ucfirst($classname)){ //lib
-    $filename = LIB_DIR . $classlower . DIRECTORY_SEPARATOR . $classname . '.php';
+  if($classname == 'idna_convert'){ //idna
+    $filename = LIB_DIR . 'idna' . DIRECTORY_SEPARATOR . 'idna.php';
+  } elseif($classname == 'uctc'){ //idna uctc
+    $filename = LIB_DIR . 'idna' . DIRECTORY_SEPARATOR . 'uctc.php';
+  } elseif(strpos($classname, 'SimplePie') === 0){ //simplepie
+    $filename = LIB_DIR . 'simplepie' . DIRECTORY_SEPARATOR . str_replace('_', DIRECTORY_SEPARATOR, $classname) . '.php';
+  } elseif($classname == 'Savant3'){ //savant3
+    $filename = LIB_DIR . 'savant3' . DIRECTORY_SEPARATOR . 'Savant3.php';
   } else {
     $classarr = explode('_', $classname);
     $classtype = isset($classarr[1]) ? $classarr[1] : '';
@@ -42,9 +48,11 @@ spl_autoload_register(function($classname){
       return true;
     } else {
       if(isset($classtype) && $classtype == 'app'){
-        func_core::show404();
+        echo $filename;exit;
+        //func_core::show404();
       } else {
-        func_core::showerror();
+        echo $filename;exit;
+        //func_core::showerror();
       }
     }
   }
