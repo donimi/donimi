@@ -1,0 +1,9 @@
+*.class
+*.pyc
+*.pyo
+*.log
+.project
+.buildpath
+.settings/*
+.idea
+*.clpprj
