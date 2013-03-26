@@ -1,22 +1,31 @@
 <?php echo $this->header;?>
-<div id="content">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Username</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php for($i=0;$i<100;$i++):?>
-      <tr>
-        <td>Larry</td>
-        <td>Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-      <?php endfor;?>
-    </tbody>
-  </table>
+<div id="wrapper">
+  <div id="sidebar">
+
+  </div>
+  <div id="content">
+    <table class="table table-hover">
+      <!--
+      <thead>
+        <tr>
+          <th>site</th>
+          <th>title</th>
+          <th>date</th>
+        </tr>
+      </thead>
+      -->
+      <tbody>
+        <?php foreach($this->items as $item):?>
+        <tr>
+          <td><?php echo $this->sitetitle;?></td>
+          <td>
+            <?php echo $item['title'];?>
+          </td>
+          <td><?php echo $item['date'];?></td>
+        </tr>
+        <?php endforeach;?>
+      </tbody>
+    </table>
+  </div>
 </div>
 <?php echo $this->footer;?>

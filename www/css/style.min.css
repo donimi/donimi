@@ -1,3 +1,6 @@
+#wrapper {
+  margin-top: 41px;
+}
 .butt {
   padding: 2px;
   min-width: 70px;
@@ -28,6 +31,20 @@
 .navbar-inverse .logout {
   background: #fff;
 }
+#sidebar {
+  width: 15%;
+  float: left;
+  position: fix;
+  left: 0;
+  z-index: 10;
+}
+#content {
+  width: 85%;
+  float: right;
+}
 .table {
   cursor: pointer;
+}
+tr .active {
+  border-bottom: 1px solid #08c;
 }
