@@ -31,16 +31,30 @@
 .navbar-inverse .logout {
   background: #fff;
 }
+/** search
+.search-query {
+  margin-top: 4px;
+}
+**/
 #sidebar {
-  width: 15%;
   float: left;
-  position: fix;
   left: 0;
-  z-index: 10;
+}
+.sidebar {
+  width: 1%;
+  max-width: 12px;
+}
+.sidebar-w {
+  width: 15%;
 }
 #content {
-  width: 85%;
   float: right;
+}
+.content {
+  width: 98%;
+}
+.content-w {
+  width: 84%;
 }
 .table {
   cursor: pointer;

@@ -1,13 +1,12 @@
 <?php echo $this->header;?>
 <div id="wrapper">
-  <div id="sidebar">
-
-  </div>
-  <div id="content">
+  <div id="sidebar" class="sidebar"></div>
+  <div id="content" class="content">
     <table class="table table-hover">
       <!--
       <thead>
         <tr>
+          <th>star</th>
           <th>site</th>
           <th>title</th>
           <th>date</th>
@@ -17,6 +16,7 @@
       <tbody>
         <?php foreach($this->items as $item):?>
         <tr>
+          <td width="25"><img src="/img/stare.png"></td>
           <td><?php echo $this->sitetitle;?></td>
           <td>
             <?php echo $item['title'];?>
@@ -27,5 +27,6 @@
       </tbody>
     </table>
   </div>
+  <div style="clear:both;zoom:1;"></div>
 </div>
 <?php echo $this->footer;?>
