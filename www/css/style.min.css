@@ -39,6 +39,8 @@
 #sidebar {
   float: left;
   left: 0;
+  height: 100%;
+  min-height: 100%;
 }
 .sidebar {
   width: 1%;
@@ -49,6 +51,7 @@
 }
 #content {
   float: right;
+  height: 100%;
 }
 .content {
   width: 98%;
