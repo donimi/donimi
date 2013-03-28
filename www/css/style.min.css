@@ -65,6 +65,16 @@
 tr .active {
   border-bottom: 1px solid #08c;
 }
+.td-star-f {
+  background-image: url(/img/starf.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.td-star-e {
+  background-image: url(/img/stare.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 /*subpage css*/
 .subpage {
   width: 226px;
