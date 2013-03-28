@@ -38,11 +38,25 @@
   margin-top: 4px;
 }
 **/
+<<<<<<< HEAD
+=======
+#sidebar {
+  float: left;
+  left: 0;
+  height: 100%;
+  min-height: 100%;
+}
+.sidebar {
+  width: 1%;
+  max-width: 12px;
+}
+>>>>>>> 9d274a4dc0cc2572af8376e266bb3a5921debcfc
 .sidebar-w {
   width: 15%;
 }
 #content {
   float: right;
+  height: 100%;
 }
 .content {
   width: 98%;

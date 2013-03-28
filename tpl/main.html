@@ -1,5 +1,9 @@
 <?php echo $this->header;?>
 <div id="wrapper">
+<<<<<<< HEAD
+=======
+  <div id="sidebar" class="sidebar">&gt;</div>
+>>>>>>> 9d274a4dc0cc2572af8376e266bb3a5921debcfc
   <div id="content" class="content">
     <table class="table table-hover">
       <!--
@@ -17,15 +21,15 @@
         <?php foreach($this->items as $item):?>
         <tr>
           <?php if($i==4):?>
-          <td width="25"><img src="/img/starf.png"></td>
+          <td width="25" class="td-star"><img src="/img/starf.png"></td>
           <?php else:?>
-          <td width="25"><img src="/img/stare.png"></td>
+          <td width="25" class="td-star"><img src="/img/stare.png"></td>
           <?php endif;?>
-          <td><?php echo $this->sitetitle;?></td>
-          <td>
+          <td width="15%" class="td-col"><?php echo $this->sitetitle;?></td>
+          <td class="td-col">
             <?php echo $item['title'];?>
           </td>
-          <td><?php echo $item['date'];?></td>
+          <td width="10%" class="td-col"><?php echo $item['date'];?></td>
         </tr>
         <?php $i++;?>
         <?php endforeach;?>
