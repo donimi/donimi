@@ -26,9 +26,14 @@ define('UPLOAD_DIR', WWW_DIR  . 'upload' . DIRECTORY_SEPARATOR);
 
 //autoload function
 spl_autoload_register(function($classname){
-  $classlower = strtolower($classname);
-  if($classname == ucfirst($classname)){ //lib
-    $filename = LIB_DIR . $classlower . DIRECTORY_SEPARATOR . $classname . '.php';
+  if($classname == 'idna_convert'){ //idna
+    $filename = LIB_DIR . 'idna' . DIRECTORY_SEPARATOR . 'idna.php';
+  } elseif($classname == 'uctc'){ //idna uctc
+    $filename = LIB_DIR . 'idna' . DIRECTORY_SEPARATOR . 'uctc.php';
+  } elseif(strpos($classname, 'SimplePie') === 0){ //simplepie
+    $filename = LIB_DIR . 'simplepie' . DIRECTORY_SEPARATOR . str_replace('_', DIRECTORY_SEPARATOR, $classname) . '.php';
+  } elseif($classname == 'Savant3'){ //savant3
+    $filename = LIB_DIR . 'savant3' . DIRECTORY_SEPARATOR . 'Savant3.php';
   } else {
     $classarr = explode('_', $classname);
     $classtype = isset($classarr[1]) ? $classarr[1] : '';

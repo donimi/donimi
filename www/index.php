@@ -48,11 +48,9 @@ spl_autoload_register(function($classname){
       return true;
     } else {
       if(isset($classtype) && $classtype == 'app'){
-        echo $filename;exit;
-        //func_core::show404();
+        func_core::show404();
       } else {
-        echo $filename;exit;
-        //func_core::showerror();
+        func_core::showerror();
       }
     }
   }
