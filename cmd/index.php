@@ -75,7 +75,7 @@ class index_cmd {
     } else {
       if($this->num < 6){
         $this->num++;
-        $this->sleep(10);
+        sleep(10);
         $this->index();
       } else {
         exit;
