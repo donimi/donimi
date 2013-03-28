@@ -11,8 +11,8 @@ class cmd_core{
     if(empty($this->cmd)){
       func_core::logerror();
     } else {
-      $this->start();
       $this->param = $this->param();
+      $this->start();
     }
   }
 
@@ -28,8 +28,7 @@ class cmd_core{
       $this->cmd['status'] = 'waiting';
       $this->cmd['created'] = time() + $this->cmd['next'];
     }
-    $this->cmdmodel->update($this->cmd);
-    exit;
+    return $this->cmdmodel->update($this->cmd);
   }
 
   public function param(){

@@ -5,6 +5,10 @@ date_default_timezone_set('Asia/Shanghai');
 ini_set('memory_limit', '128M');
 set_time_limit(0);
 
+//is windows system?
+//define('IS_WIN', !strncasecmp(PHP_OS, 'win', 3));
+define('IS_WIN', DIRECTORY_SEPARATOR == '\\');
+
 //define dir
 define('CMD_DIR',    dirname(__FILE__)   . DIRECTORY_SEPARATOR);
 define('ROOT_DIR',   substr(CMD_DIR, 0, -4));
@@ -55,6 +59,7 @@ spl_autoload_register(function($classname){
 });
 
 class index_cmd {
+  public $num = 0;
   public function __construct(){
     $this->start();
   }
@@ -68,15 +73,28 @@ class index_cmd {
       sleep(1);
       $this->index();
     } else {
-      exit;
+      if($this->num < 6){
+        $this->num++;
+        $this->sleep(10);
+        $this->index();
+      } else {
+        exit;
+      }
     }
   }
 
   public function start(){
-    $cmd = 'ps aux | grep /root/wait.php$ | wc -l';
-    $process = system($cmd);
-    echo $process;exit;
-    $this->index();
+    if(IS_WIN == true){
+      $this->index();
+    } else {
+      $cmd = 'ps aux | grep /cmd/index.php$ | wc -l';
+      $process = system($cmd);
+      if($process > 10){
+        exit;
+      } else {
+        $this->index();
+      }
+    }
   }
 }
 $cmd = new index_cmd();
