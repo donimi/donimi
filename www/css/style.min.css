@@ -89,28 +89,26 @@ tr .active {
   left: -200px;
   background: #fff;
 }
-.subpage .subpage_resize{
+.subpage .subpage_resize {
   width: 200px;
-  float: left
+  float: left;
 }
-.subpage .subpage_ctrol{
+.subpage .subpage_ctrol {
   width: 16px;
   padding-left: 10px;
   float: right;
 }
-.subpage .subpage_ctrol a{
+.subpage .subpage_ctrol span {
   display: block;
   width: 16px;
   height: 85px;
-	line-height:85px;
-	text-align:center;
+	line-height: 85px;
+	text-align: center;
   position: relative;
   top: 42%;
-	background:#a93cc4;
-	color:#fff
-}
-.subpage .subpage_ctrol a:hover{
-	text-decoration:none;
-	background:#ccc;
-	color:#666
+	background: #08c;
+	color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 }

@@ -8,8 +8,8 @@ class regmail_cmd extends cmd_core{
 
   public function index(){
     $id = $this->param['id'];
-    $waitmodel = new wait_model();
-    $wait = $waitmodel->id($id);
+    $waitingmodel = new waiting_model();
+    $waiting = $waitingmodel->id($id);
     if(isset($wait['email'])){
       $alt = $this->getalt($wait['pass']);
       $html = $this->gethtml($wait['pass']);
@@ -28,10 +28,11 @@ class regmail_cmd extends cmd_core{
       $m->MsgHTML($html);
       $m->AddAddress($wait['email'], '');
       if(!$m->Send()){
-        echo 'Mailer Error:'. $m->ErrorInfo . "\n";
+        $waiting['status'] = 'fail';
       } else {
-        echo "Mail Sended!\n";
+        $waiting['status'] = 'sent';
       }
+      $waitingmodel->update($waiting);
     }
   }
 
