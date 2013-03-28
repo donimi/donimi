@@ -5,7 +5,6 @@ class main_app extends app_core{
   }
 
   public function index(){
-    /*
     $url = 'http://www.ruanyifeng.com/blog/atom.xml';
     $rss = new SimplePie();
     $rss->set_feed_url($url);
@@ -23,18 +22,6 @@ class main_app extends app_core{
       $item['date'] = $v->get_date('y-m-d h:i:s');
       $items[] = $item;
     }
-    */
-    $sitetitle = 'site title';
-    $items = array();
-    for($i=1;$i<100;$i++){
-      $item = array();
-      $item['link'] = $i . '-link';
-      $item['title'] = $i . '-title';
-      $item['content'] = $i . '-content';
-      $item['date'] = date('Y-m-d H:i:s', time());
-      $items[] = $item;
-    }
-    //print_r($items);exit;
     $this->tpl();
     $this->frame();
     $this->tpl->assign('sitetitle', $sitetitle);
