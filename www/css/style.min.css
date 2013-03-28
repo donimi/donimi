@@ -1,4 +1,7 @@
 /*global*/
+html,body{
+	overflow:hidden
+}
 .clearfix {
   zoom: 1;
 }
@@ -56,6 +59,9 @@
 .content {
   width: 98%;
 }
+.content_resize {
+	overflow-y:auto
+}
 .content-w {
   width: 84%;
 }
@@ -86,44 +92,15 @@ tr .active {
   display: block;
   width: 16px;
   height: 85px;
-  background-image: url(../img/sidebar_icon.png);
-  background-repeat: no-repeat;
+	line-height:85px;
+	text-align:center;
   position: relative;
   top: 42%;
+	background:#a93cc4;
+	color:#fff
 }
-.subpage .subpage_ctrol a.off{
-  background-position: 0 -85px;
-}
-.subpage .subpage_ctrol a.on{
-  background-position: 0 -170px;
-}
-.subpage .subpage_ctrol a.hover{
-  background-position: 0 -225px;
-}
-.subpage .subpage_resize{
-	width:200px;
-	float:left
-}
-.subpage .subpage_ctrol{
-  width: 16px;
-  padding-left:10px;
-  float:right;
-}
-.subpage .subpage_ctrol a{
-	display:block;
-	width:16px;
-	height:85px;
-	background-image:url(../img/sidebar_icon.png);
-	background-repeat:no-repeat;
-	position:relative;
-	top:42%;
-}
-.subpage .subpage_ctrol a.off{
-	background-position:0 -85px;
-}
-.subpage .subpage_ctrol a.on{
-	background-position:0 -170px;
-}
-.subpage .subpage_ctrol a.hover{
-	background-position:0 -225px;
+.subpage .subpage_ctrol a:hover{
+	text-decoration:none;
+	background:#ccc;
+	color:#666
 }

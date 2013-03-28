@@ -1,7 +1,8 @@
 <?php echo $this->header;?>
 <div id="wrapper">
-  <div id="content" class="content">
-    <table class="table table-hover">
+	<div id="content" class="content">
+		<div class="content_resize claerfix">
+			<table class="table table-hover">
       <!--
       <thead>
         <tr>
@@ -12,26 +13,24 @@
         </tr>
       </thead>
       -->
-      <tbody>
-        <?php $i=0;?>
-        <?php foreach($this->items as $item):?>
-        <tr>
-          <?php if($i==4):?>
-          <td width="25" class="td-star"><img src="/img/starf.png"></td>
-          <?php else:?>
-          <td width="25" class="td-star"><img src="/img/stare.png"></td>
-          <?php endif;?>
-          <td width="15%" class="td-col"><?php echo $this->sitetitle;?></td>
-          <td class="td-col">
-            <?php echo $item['title'];?>
-          </td>
-          <td width="10%" class="td-col"><?php echo $item['date'];?></td>
-        </tr>
-        <?php $i++;?>
-        <?php endforeach;?>
-      </tbody>
-    </table>
-  </div>
-  <div style="clear:both;zoom:1;"></div>
+				<tbody>
+					<?php $i=0;?>
+					<?php foreach($this->items as $item):?>
+					<tr>
+						<?php if($i==4):?>
+						<td width="25" class="td-star"><img src="/img/starf.png"></td>
+						<?php else:?>
+						<td width="25" class="td-star"><img src="/img/stare.png"></td>
+						<?php endif;?>
+						<td width="15%" class="td-col"><?php echo $this->sitetitle;?></td>
+						<td class="td-col"><?php echo $item['title'];?></td>
+						<td width="10%" class="td-col"><?php echo $item['date'];?></td>
+					</tr>
+					<?php $i++;?>
+					<?php endforeach;?>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>
 <?php echo $this->footer;?>
