@@ -1,3 +1,5 @@
+.clearfix{zoom:1}
+.clearfix:after{content:'';display:block;clear:both;overflow:hidden}
 #wrapper {
   margin-top: 41px;
 }
@@ -36,14 +38,6 @@
   margin-top: 4px;
 }
 **/
-#sidebar {
-  float: left;
-  left: 0;
-}
-.sidebar {
-  width: 1%;
-  max-width: 12px;
-}
 .sidebar-w {
   width: 15%;
 }
@@ -61,4 +55,39 @@
 }
 tr .active {
   border-bottom: 1px solid #08c;
+}
+/*subpage css*/
+.subpage {
+  width:226px;
+  position:absolute;
+  top:0;
+  left: -200px;
+  background:#fff
+}
+.subpage .subpage_resize{
+	width:200px;
+	float:left
+}
+.subpage .subpage_ctrol{
+  width: 16px;
+  padding-left:10px;
+  float:right;
+}
+.subpage .subpage_ctrol a{
+	display:block;
+	width:16px;
+	height:85px;
+	background-image:url(../img/sidebar_icon.png);
+	background-repeat:no-repeat;
+	position:relative;
+	top:42%;
+}
+.subpage .subpage_ctrol a.off{
+	background-position:0 -85px;
+}
+.subpage .subpage_ctrol a.on{
+	background-position:0 -170px;
+}
+.subpage .subpage_ctrol a.hover{
+	background-position:0 -225px;
 }
