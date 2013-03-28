@@ -88,7 +88,7 @@ class index_cmd {
       $this->index();
     } else {
       $cmd = 'ps aux | grep /cmd/index.php$ | wc -l';
-      $process = system($cmd);
+      $process = exec($cmd);
       if($process > 10){
         exit;
       } else {
