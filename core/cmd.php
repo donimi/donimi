@@ -17,18 +17,19 @@ class cmd_core{
   }
 
   public function start(){
-    $this->cmd['status'] = 2;
+    $this->cmd['status'] = 'processing';
     return $this->cmdmodel->update($this->cmd);
   }
 
-  public function end(){
+  public function end($result = true){
     if($this->cmd['next'] == 0){
-      $this->cmd['status'] = 1;
+      $this->cmd['status'] = $result == true ? 'finished' : 'failed';
     } else {
-      $this->cmd['status'] = 0;
-      $this->cmd['created'] += $this->cmd['next'];
+      $this->cmd['status'] = 'waiting';
+      $this->cmd['created'] = time() + $this->cmd['next'];
     }
     $this->cmdmodel->update($this->cmd);
+    exit;
   }
 
   public function param(){

@@ -10,9 +10,9 @@ class regmail_cmd extends cmd_core{
     $id = $this->param['id'];
     $waitingmodel = new waiting_model();
     $waiting = $waitingmodel->id($id);
-    if(isset($wait['email'])){
-      $alt = $this->getalt($wait['pass']);
-      $html = $this->gethtml($wait['pass']);
+    if(isset($waiting['email'])){
+      $alt = $this->getalt($waiting['pass']);
+      $html = $this->gethtml($waiting['pass']);
       $m = new PHPMailer();
       $m->CharSet = 'UTF-8';
       $m->IsSMTP();
@@ -26,7 +26,7 @@ class regmail_cmd extends cmd_core{
       $m->Subject = 'donimi register email confirm';
       $m->AltBody = $alt;
       $m->MsgHTML($html);
-      $m->AddAddress($wait['email'], '');
+      $m->AddAddress($waiting['email'], '');
       if(!$m->Send()){
         $waiting['status'] = 'fail';
       } else {
