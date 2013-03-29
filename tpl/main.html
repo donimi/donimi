@@ -14,23 +14,25 @@
         </thead>
         -->
   			<tbody>
-  				<?php $i=0;?>
   				<?php foreach($this->items as $item):?>
   				<tr>
-  					<?php if($i==4):?>
-  					<td width="25" class="td-star-f"></td>
-  					<?php else:?>
   					<td width="25" class="td-star-e"></td>
-  					<?php endif;?>
   					<td width="15%" class="td-col"><?php echo $this->sitetitle;?></td>
   					<td class="td-col"><?php echo $item['title'];?></td>
   					<td width="10%" class="td-col"><?php echo $item['date'];?></td>
   				</tr>
-  				<?php $i++;?>
   				<?php endforeach;?>
   			</tbody>
   		</table>
 	  </div>
+  </div>
+</div>
+<div class="subpage clearfix" id="subpage">
+  <div class="subpage_resize">
+
+  </div>
+  <div class="subpage_ctrol">
+    <span id="off" class="off">&gt;</span>
   </div>
 </div>
 <?php echo $this->footer;?>
