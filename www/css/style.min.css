@@ -2,6 +2,9 @@
 html,body{
 	overflow:hidden
 }
+button{
+	border:none
+}
 .clearfix {
   zoom: 1;
 }
@@ -85,6 +88,7 @@ tr .active {
 .subpage {
   width: 226px;
   position: absolute;
+	z-index:1031;
   top: 0;
   left: -200px;
   background: #fff;
@@ -92,13 +96,14 @@ tr .active {
 .subpage .subpage_resize {
   width: 200px;
   float: left;
+	overflow-y:auto
 }
 .subpage .subpage_ctrol {
   width: 16px;
   padding-left: 10px;
   float: right;
 }
-.subpage .subpage_ctrol span {
+.subpage .subpage_ctrol button{
   display: block;
   width: 16px;
   height: 85px;
@@ -107,8 +112,12 @@ tr .active {
   position: relative;
   top: 42%;
 	background: #08c;
+	color:#fff
+}
+.subpage .subpage_ctrol button:hover{
+	text-decoration:none;
+	background: #08c;
 	color: #fff;
   font-size: 16px;
   font-weight: bold;
-  cursor: pointer;
 }
