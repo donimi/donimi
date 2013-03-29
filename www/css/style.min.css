@@ -52,21 +52,15 @@ button{
   margin-top: 4px;
 }
 **/
-.sidebar-w {
-  width: 15%;
-}
 #content {
   float: right;
   height: 100%;
 }
 .content {
-  width: 98%;
+  width: 99%;
 }
 .content_resize {
 	overflow-y:auto
-}
-.content-w {
-  width: 84%;
 }
 .table {
   cursor: pointer;
@@ -77,12 +71,12 @@ tr .active {
 .td-star-f {
   background-image: url(/img/starf.png);
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center center !important;
 }
 .td-star-e {
   background-image: url(/img/stare.png);
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center center !important;
 }
 /*subpage*/
 .subpage {
@@ -117,17 +111,29 @@ tr .active {
 }
 .subpage_ctrol .icon-chevron-right {
   margin-left: -6px;
+  margin-left: -8px \9;
 }
 .subpage_ctrol .icon-chevron-left {
   margin-left: -4px;
+  margin-left: -6px \9;
 }
 /*sidenav*/
+#addfeed-panel {
+  padding: 0px 5px 5px 5px;
+  margin-top: 50px;
+}
+#addfeed-panel button {
+  margin-bottom: 10px;
+}
+.input-addfeed {
+  width: 195px;
+}
 #sidenav {
-  padding: 5px;
+  padding: 0px 5px 5px 5px;
 }
 .sidenav {
   width: 260px;
-  margin: 50px 0 0;
+  width: 260px \9;
   padding: 0;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
@@ -138,10 +144,9 @@ tr .active {
 }
 .sidenav > li {
   display: block;
-  width: 260px \9;
   margin: 0 0 -1px;
-  padding: 8px 14px;
-  border: 1px solid #e5e5e5;
+  padding: 5px 12px;
+  border: 1px solid #e3e3e3;
   cursor: pointer;
   color: #08c;
 }
@@ -160,7 +165,7 @@ tr .active {
   background-color: #08c;
   position: relative;
   z-index: 2;
-  padding: 9px 15px;
+  padding: 6px 13px;
   border: 0;
   text-shadow: 0 1px 0 rgba(0,0,0,.15);
   -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
@@ -168,7 +173,7 @@ tr .active {
           box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
 }
 .sidenav > li:hover {
-  background-color: #f0f0f0;
+  background-color: #efefef;
 }
 .sidenav > li:hover.active {
   background-color: #08c;
@@ -185,4 +190,30 @@ tr .active {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   transform: rotate(90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -ms-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  /*
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  transition-duration: 500ms;
+  */
+}
+#showfeed-panel {
+  display: none;
+  padding: 5px;
+  width: 248px;
+  height: 400px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-arrow-color: #fff;
+  scrollbar-face-color: #f0f0f0;
+  scrollbar-base-color: #08c;
+  scrollbar-track-color: #08c;
+}
+.feed-nav {
+  margin-left: 0px;
+  list-style: none;
+  line-height: 20px;
 }
