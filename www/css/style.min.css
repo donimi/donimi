@@ -84,40 +84,97 @@ tr .active {
   background-repeat: no-repeat;
   background-position: center center;
 }
-/*subpage css*/
+/*subpage*/
 .subpage {
-  width: 226px;
+  width: 286px;
   position: absolute;
 	z-index:1031;
   top: 0;
-  left: -200px;
-  background: #fff;
+  left: -270px;
 }
 .subpage .subpage_resize {
-  width: 200px;
+  width: 270px;
   float: left;
-	overflow-y:auto
+	overflow-y: auto;
+  background: #f7f7f7;
 }
 .subpage .subpage_ctrol {
   width: 16px;
-  padding-left: 10px;
+  padding-left: 0;
   float: right;
 }
-.subpage .subpage_ctrol button{
+.subpage .subpage_ctrol button {
   display: block;
   width: 16px;
   height: 85px;
 	line-height: 85px;
-	text-align: center;
   position: relative;
   top: 42%;
-	background: #08c;
-	color:#fff
-}
-.subpage .subpage_ctrol button:hover{
-	text-decoration:none;
+  padding: 3px;
 	background: #08c;
 	color: #fff;
+}
+.subpage .subpage_ctrol button:hover {
   font-size: 16px;
   font-weight: bold;
+}
+/*sidenav*/
+#sidenav {
+  padding: 5px;
+}
+.sidenav {
+  width: 260px;
+  margin: 50px 0 0;
+  padding: 0;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+     -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+          box-shadow: 0 1px 4px rgba(0,0,0,.065);
+}
+.sidenav > li {
+  display: block;
+  width: 260px \9;
+  margin: 0 0 -1px;
+  padding: 8px 14px;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+  color: #08c;
+}
+.sidenav > li:last-child {
+  -webkit-border-radius: 0 0 6px 6px;
+     -moz-border-radius: 0 0 6px 6px;
+          border-radius: 0 0 6px 6px;
+}
+.sidenav > li:first-child {
+  -webkit-border-radius: 6px 6px 0 0;
+     -moz-border-radius: 6px 6px 0 0;
+          border-radius: 6px 6px 0 0;
+}
+.sidenav > li.active {
+  color: #fff;
+  background-color: #08c;
+  position: relative;
+  z-index: 2;
+  padding: 9px 15px;
+  border: 0;
+  text-shadow: 0 1px 0 rgba(0,0,0,.15);
+  -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+     -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+          box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+}
+.sidenav > li:hover {
+  background-color: #f0f0f0;
+}
+.sidenav > li:hover.active {
+  background-color: #08c;
+  color: #fff;
+}
+/* chevrons */
+.sidenav .icon-chevron-right {
+  float: right;
+  margin-top: 2px;
+  margin-right: -6px;
+  opacity: .25;
 }
