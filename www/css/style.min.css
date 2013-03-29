@@ -96,21 +96,14 @@ tr .active {
 .subpage .subpage_resize {
   width: 200px;
   float: left;
-<<<<<<< HEAD
 	overflow-y:auto
-=======
->>>>>>> 2c8787a1c56812b968e04d86b5518fff42042063
 }
 .subpage .subpage_ctrol {
   width: 16px;
   padding-left: 10px;
   float: right;
 }
-<<<<<<< HEAD
 .subpage .subpage_ctrol button{
-=======
-.subpage .subpage_ctrol span {
->>>>>>> 2c8787a1c56812b968e04d86b5518fff42042063
   display: block;
   width: 16px;
   height: 85px;
@@ -118,20 +111,13 @@ tr .active {
 	text-align: center;
   position: relative;
   top: 42%;
-<<<<<<< HEAD
 	background:#a93cc4;
 	color:#fff
 }
 .subpage .subpage_ctrol button:hover{
 	text-decoration:none;
-	background:#ccc;
-	color:#666
-}
-=======
 	background: #08c;
 	color: #fff;
   font-size: 16px;
   font-weight: bold;
-  cursor: pointer;
 }
->>>>>>> 2c8787a1c56812b968e04d86b5518fff42042063
