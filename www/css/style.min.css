@@ -110,13 +110,16 @@ tr .active {
 	line-height: 85px;
   position: relative;
   top: 42%;
-  padding: 3px;
 	background: #08c;
-	color: #fff;
 }
-.subpage .subpage_ctrol button:hover {
-  font-size: 16px;
-  font-weight: bold;
+.subpage_ctrol i {
+  opacity: .9;
+}
+.subpage_ctrol .icon-chevron-right {
+  margin-left: -6px;
+}
+.subpage_ctrol .icon-chevron-left {
+  margin-left: -4px;
 }
 /*sidenav*/
 #sidenav {
@@ -176,5 +179,10 @@ tr .active {
   float: right;
   margin-top: 2px;
   margin-right: -6px;
-  opacity: .25;
+  opacity: .5;
+}
+.sidenav .down {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
