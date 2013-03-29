@@ -26,7 +26,7 @@ class cmd_core{
       $this->cmd['status'] = $result == true ? 'finished' : 'failed';
     } else {
       $this->cmd['status'] = 'waiting';
-      $this->cmd['created'] = time() + $this->cmd['next'];
+      $this->cmd['start'] = time() + $this->cmd['next'];
     }
     return $this->cmdmodel->update($this->cmd);
   }

@@ -11,30 +11,76 @@ class spider_cmd extends cmd_core{
     $feedmodel = new feed_model();
     $feed = $feedmodel->id($id);
     if(isset($feed['url'])){
-      $rss = new SimplePie();
-      $rss->set_feed_url($feed['url']);
-      $rss->enable_order_by_date(false);
-      $rss->cache = false;
-      $rss->init();
+      $rss = $this->fetch($feed['url']);
       if($feed['title'] == ''){
         $feed['title'] = $rss->get_title();
         $feedmodel->update($feed);
       }
-      $itemodel = new item_model();
-      foreach($rss->get_items() as $v){
-        $item = array();
-        $item['fid'] = $id;
-        $item['title'] = $v->get_title();
-        //$item['content'] = $v->get_content();
-        $item['content'] = html_entity_decode($v->get_content());
-        if($item['is_full'] == 'no'){
-          //fetch content
+      foreach($rss->get_items() as $item){
+        $title = $item->get_title();
+        $titlecode = sha1($title);
+        $content = html_entity_decode($item->get_content());
+        if($feed['is_full'] == 'no'){
+
         }
-        $item['link'] = $v->get_permalink();
-        $item['tm'] = $v->get_date('y-m-d h:i:s');
-        $item['created'] = time();
-        $itemodel->set($item);
+        $contentcode = sha1($content);
+        if($this->has('title', $titlecode)){
+          if($this->has('content', $contentcode)){
+            break;
+          }
+        }
+        $per = array();
+        $per['fid'] = $id;
+        $per['title'] = $title;
+        $per['content'] = $content;
+        $per['link'] = $item->get_permalink();
+        $per['tm'] = $item->get_date('y-m-d h:i:s');
+        $per['created'] = time();
+        $iid = $this->set($per);
+        if($iid > 0){
+          $this->sethash('title', $titlecode, $iid);
+          $this->sethash('content', $contentcode, $iid);
+        }
       }
     }
+  }
+
+  private function fetch($url){
+    $rss = new SimplePie();
+    $rss->set_feed_url($url);
+    $rss->enable_order_by_date(false);
+    $rss->cache = false;
+    $rss->init();
+    return $rss;
+  }
+
+  private function has($type = 'title', $code){
+    if($type != 'title' && $type != 'content'){
+      return false;
+    }
+    $hashmodel = new hash_model();
+    if($type == 'content'){
+      $hashmodel->table('content_hash');
+    }
+    return $hashmodel->exist('code', $code);
+  }
+
+  private function set($item){
+    $itemodel = new item_model();
+    return $itemodel->set($item);
+  }
+
+  private function sethash($type = 'title', $code, $iid){
+    if($type != 'title' && $type != 'content'){
+      return false;
+    }
+    $hashmodel = new hash_model();
+    if($type == 'content'){
+      $hashmodel->table('content_hash');
+    }
+    $data = array();
+    $data['code'] = $code;
+    $data['iid'] = $iid;
+    return $hashmodel->set($data);
   }
 }

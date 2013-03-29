@@ -7,7 +7,7 @@ class cmd_model extends model_core {
 
   public function getone(){
     $now = time();
-    $sql = "SELECT * FROM `{$this->table}` WHERE `created` <= $now AND `status` = 'waiting'
+    $sql = "SELECT * FROM `{$this->table}` WHERE `start` <= $now AND `status` = 'waiting'
       ORDER BY `created` LIMIT 1";
     $query = $this->db->query($sql);
     return $query->fetch(PDO::FETCH_ASSOC);
