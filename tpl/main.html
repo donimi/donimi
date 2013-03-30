@@ -20,28 +20,16 @@
 <div class="subpage clearfix" id="subpage">
   <div class="subpage_resize">
     <div id="addfeed-panel">
-      <input type="text" class="input-addfeed" placeholder="add new feed">
-      <button class="btn btn-small btn-primary">add</button>
+      <input type="text" placeholder="add new feed">
+      <button class="btn btn-primary">add</button>
     </div>
-    <div id="sidenav">
-      <ul class="nav nav-list sidenav">
-        <li class="active">all items <i class="icon-chevron-right"></i></li>
-        <li>starred items <i class="icon-chevron-right"></i></li>
-        <li class="setdown">
-          feeds <i class="icon-chevron-right"></i>
-        </li>
+    <div id="sidebar">
+      <ul class="nav nav-list">
+        <li><a href="/1"><i class="icon-home"></i> home</a></li>
+        <li class="active"><a href="/2"><i class="icon-align-justify"></i> all items</a></li>
+        <li><a href="/3"><i class="icon-star"></i> starred items</a></li>
+        <li><a href="/4"><i class="icon-chevron-right"></i> feeds</a></li>
       </ul>
-      <div id="showfeed-panel">
-        <ul class="feed-nav">
-          <?php for($i=0;$i<100;$i++):?>
-          <li>
-            <span style="padding:2px;">
-              <img src="/img/f1.png" width="16" height="16">
-            </span>阮一峰的网络日志
-          </li>
-          <?php endfor;?>
-        </ul>
-      </div>
     </div>
   </div>
   <div class="subpage_ctrol">
