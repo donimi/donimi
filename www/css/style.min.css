@@ -1,9 +1,6 @@
 /*global*/
-html,body{
-	overflow:hidden
-}
-button{
-	border:none
+html,body {
+	overflow: hidden;
 }
 .clearfix {
   zoom: 1;
@@ -61,18 +58,16 @@ button{
 **/
 #content {
   float: right;
+  width: 99%;
   height: 100%;
 }
-.content {
-  width: 99%;
-}
 .content_resize {
-	overflow-y:auto
+	overflow-y: auto;
 }
-.table {
+td {
   cursor: pointer;
 }
-tr .active {
+td .active {
   border-bottom: 1px solid #08c;
 }
 .td-star-f {
@@ -105,23 +100,29 @@ tr .active {
   padding-left: 0;
   float: right;
 }
-.subpage .subpage_ctrol button {
+#subpage_button {
   display: block;
   width: 16px;
-  height: 85px;
-	line-height: 85px;
+  height: 80px;
+	line-height: 80px;
   position: fixed;
-  top: 42%;
-	background: #2570bc;
+  top: 40%;
+  /* background: #8a2be2; */
+  /* background: blueviolet; */
+  /* background: #9400d3; */
+  /* background: darkviolet; */
+  /* background: #ff1493; */
+	background: deeppink;
+  border: none;
 }
-.subpage_ctrol i {
+#subpage_button i {
   opacity: .8;
 }
-.subpage_ctrol .icon-chevron-right {
+#subpage_button .icon-chevron-right {
   margin-left: -6px;
   margin-left: -8px \9;
 }
-.subpage_ctrol .icon-chevron-left {
+#subpage_button .icon-chevron-left {
   margin-left: -4px;
   margin-left: -6px \9;
 }
@@ -130,6 +131,9 @@ tr .active {
 /*sidebar*/
 #sidebar {
   margin-top: 90px;
+}
+.nav>li>a:hover, .nav>li>a:focus {
+  background-color: #ddd;
 }
 #addfeed-panel {
   top: 50px;

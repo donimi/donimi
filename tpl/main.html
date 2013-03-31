@@ -1,16 +1,20 @@
 <?php echo $this->header;?>
+<input type="hidden" value="show" id="param_feeds_div">
+<input type="hidden" value="0" id="param_content_td">
 <div id="wrapper">
-	<div id="content" class="content">
+	<div id="content">
 		<div class="content_resize clearfix">
 			<table class="table table-hover">
   			<tbody>
+          <?php $i = 1;?>
   				<?php foreach($this->items as $item):?>
-  				<tr>
-  					<td width="25" class="td-star-e"></td>
-  					<td width="15%" class="td-col"><?php echo $this->sitetitle;?></td>
-  					<td class="td-col"><?php echo $item['title'];?></td>
-  					<td width="10%" class="td-col"><?php echo $item['date'];?></td>
+  				<tr id="tr-<?php echo $i;?>">
+  					<td width="25" id="td-star-<?php echo $i;?>" class="td-star td-star-e" data-id="<?php echo $i;?>"></td>
+  					<td width="230" class="td-col" data-id="<?php echo $i;?>"><?php echo $this->sitetitle;?><?php echo $this->sitetitle;?></td>
+  					<td class="td-col" data-id="<?php echo $i;?>"><?php echo $item['title'];?></td>
+  					<td width="120" class="td-col" data-id="<?php echo $i;?>"><?php echo $item['date'];?></td>
   				</tr>
+          <?php $i++;?>
   				<?php endforeach;?>
   			</tbody>
   		</table>
@@ -25,15 +29,15 @@
     </div>
     <div id="sidebar">
       <ul class="nav nav-list">
-        <li><a href="/1"><i class="icon-home"></i> home</a></li>
-        <li class="active"><a href="/2"><i class="icon-align-justify"></i> all items</a></li>
-        <li><a href="/3"><i class="icon-star"></i> starred items</a></li>
-        <li><a href="/4"><i class="icon-chevron-right"></i> feeds</a></li>
+        <li class="active"><a href="/"><i class="icon-home"></i> home</a></li>
+        <li><a href="/all"><i class="icon-align-justify"></i> all items</a></li>
+        <li><a href="/star"><i class="icon-star"></i> starred items</a></li>
+        <li><a href="javascript:feeds.show();"><i id="feeds_show_icon" class="icon-chevron-right"></i> feeds</a></li>
       </ul>
     </div>
   </div>
   <div class="subpage_ctrol">
-    <button id="off" class="off"><i class="icon-chevron-right"></i></button>
+    <button id="subpage_button" data-status="show"><i class="icon-chevron-right"></i></button>
   </div>
 </div>
 <?php echo $this->footer;?>
