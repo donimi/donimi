@@ -2,14 +2,9 @@
 class app_core extends io_core{
   public $tpl;
   public $user;
-  public function __construct($islogin = true){
+  public function __construct(){
     if(!isset($_SESSION)){
       session_start();
-    }
-    if($islogin){
-      if(!$this->islogin()){
-        func_core::redirect('/login');
-      }
     }
     $this->user = $this->user();
   }

@@ -19,19 +19,31 @@
       <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="/">donimi</a>
+          <div id="search">
+            <input type="text" id="keyword"><button id="searchbutton" title="search"></button>
+          </div>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <!--
-              <li class="active">
-                <a href="/">reader</a>
+              <li>
+                <a href="/register">register</a>
+              </li>
+              <li>
+                <a href="/login">login</a>
               </li>
               -->
+              <li>
+                <a href="/account">account</a>
+              </li>
+              <li>
+                <a href="/logout">logout</a>
+              </li>
+              <li>
+                <a href="/getpro">get pro!</a>
+              </li>
             </ul>
           </div>
           <!--
-          <input type="text" class="search-query">
-          <button type="submit" class="btn btn-small">Search</button>
-          -->
           <?php if(!empty($this->user)):?>
           <div class="logout butt" id="logout">logout</div>
           <div class="user butt" id="user"><?php echo $this->user['name'];?></div>
@@ -39,6 +51,7 @@
           <div class="logout butt" id="login">login</div>
           <div class="user butt" id="register">register</div>
           <?php endif;?>
+          -->
         </div>
       </div>
     </div>

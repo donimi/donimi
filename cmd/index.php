@@ -22,7 +22,7 @@ define('MODEL_DIR',  ROOT_DIR . 'model'  . DIRECTORY_SEPARATOR);
 define('TEST_DIR',   ROOT_DIR . 'test'   . DIRECTORY_SEPARATOR);
 define('TPL_DIR',    ROOT_DIR . 'tpl'    . DIRECTORY_SEPARATOR);
 define('WWW_DIR',    ROOT_DIR . 'www'    . DIRECTORY_SEPARATOR);
-define('UPLOAD_DIR', WWW_DIR  . 'upload' . DIRECTORY_SEPARATOR);
+//define('UPLOAD_DIR', WWW_DIR  . 'upload' . DIRECTORY_SEPARATOR);
 
 //autoload function
 spl_autoload_register(function($classname){
@@ -36,14 +36,13 @@ spl_autoload_register(function($classname){
     $filename = LIB_DIR . 'savant3' . DIRECTORY_SEPARATOR . 'Savant3.php';
   } else {
     $classarr = explode('_', $classname);
-    $classtype = isset($classarr[1]) ? $classarr[1] : '';
-    $filename = '';
-    if($classtype != ''){
+    if(count($classarr) > 1){
+      $classtype = $classarr[count($classarr) - 1];
+      unset($classarr[count($classarr) - 1]);
+      $filename = '';
       $classdir = ROOT_DIR . $classtype . DIRECTORY_SEPARATOR;
       if(file_exists($classdir)){
-        $filename = $classdir . $classarr[0] . '.php';
-      } else {
-        $filename = APP_DIR   . $classarr[0] . '.php';
+        $filename = $classdir . implode('_', $classarr) . '.php';
       }
     }
   }

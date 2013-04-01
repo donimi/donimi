@@ -1,7 +1,7 @@
 <?php
 class logout_app extends app_core{
   public function __construct(){
-    parent::__construct(false);
+    parent::__construct();
   }
 
   public function index(){

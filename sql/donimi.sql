@@ -47,7 +47,6 @@ CREATE TABLE IF NOT EXISTS `title_hash` (
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(100) NOT NULL,
-  `name` varchar(20) NOT NULL,
   `pass` char(40) NOT NULL,
   `status` enum('normal','deleted') NOT NULL DEFAULT 'normal',
   `created` int(10) unsigned NOT NULL,
