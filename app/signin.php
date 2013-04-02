@@ -1,5 +1,5 @@
 <?php
-class login_app extends app_core{
+class signin_app extends app_core{
   public function __construct(){
     parent::__construct();
   }
@@ -16,7 +16,7 @@ class login_app extends app_core{
       if(empty($user)){
         $this->res(10);
       }
-      if($this->_login($user)){
+      if($this->_signin($user)){
         $this->res();
       } else {
         $this->res(1);
@@ -24,7 +24,7 @@ class login_app extends app_core{
     }
   }
 
-  private function _login($user){
+  private function _signin($user){
     $_SESSION['user'] = $user;
     return true;
   }

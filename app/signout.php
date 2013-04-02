@@ -1,15 +1,15 @@
 <?php
-class logout_app extends app_core{
+class signout_app extends app_core{
   public function __construct(){
     parent::__construct();
   }
 
   public function index(){
-    $this->_logout();
+    $this->_signout();
     $this->res();
   }
 
-  private function _logout(){
+  private function _signout(){
     if(isset($_SESSION)){
       if(isset($_COOKIE[session_name()])){
         setcookie(session_name(), '', time()-36000, '/');

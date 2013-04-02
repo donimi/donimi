@@ -99,17 +99,11 @@ class model_core{
     $sth = $this->db->prepare($sql);
     $sth->execute(array(':val' => $val));
     $res = $sth->fetch(PDO::FETCH_ASSOC);
-    $res = isset($res['id']) ? $res['id'] : 0;
-    return $res;
-  }
-
-  public function check($col, $val, $id){
-    $id = (int)$id;
-    $sql = "SELECT * FROM `{$this->table}` WHERE `$col` = :val AND `id` <> $id LIMIT 1";
-    $sth = $this->db->prepare($sql);
-    $sth->execute(array(':val' => $val));
-    $res = $sth->fetch(PDO::FETCH_ASSOC);
-    return isset($res['id']) ? $res['id'] : 0;
+    if(empty($res)){
+      return 0;
+    } else {
+      return isset($res['id']) ? (int)$res['id'] : 1;
+    }
   }
 
   public function update(array $data){

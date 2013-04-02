@@ -13,13 +13,15 @@ class app_core extends io_core{
     func_core::show404();
   }
 
-  public function tpl(){
+  public function tpl($dir = null){
     $this->tpl = new Savant3();
     $tpldir = array();
     $tpldir[] = TPL_DIR;
-    $dir = TPL_DIR . APP . DIRECTORY_SEPARATOR;
-    if(file_exists($dir)){
-      $tpldir[] = $dir;
+    if($dir != null){
+      $dir = TPL_DIR . $dir . DIRECTORY_SEPARATOR;
+      if(file_exists($dir)){
+        $tpldir[] = $dir;
+      }
     }
     $this->tpl->setPath('template', $tpldir);
     return true;

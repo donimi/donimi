@@ -1,6 +1,57 @@
 <?php echo $this->header;?>
-<input type="hidden" value="show" id="param_feeds_div">
+<input type="hidden" value="hide" id="param_feeds_div">
 <input type="hidden" value="0" id="param_content_td">
+<div id="user-panel" class="modal hide fade" tabindex="-1" role="dialog">
+  <div id="user-panel-header" class="modal-header">
+    <!--
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    -->
+    <h3 id="user-panel-title"></h3>
+  </div>
+  <div id="user-panel-body" class="modal-body">
+    <div id="register-panel" class="form-horizontal hide">
+      <div class="control-group">
+        <label class="control-label">email</label>
+        <div class="controls">
+          <input type="text" id="register-panel-email" placeholder="email">
+          <br>
+          <span id="register-email-err" class="err">(email address is wrong)</span>
+        </div>
+      </div>
+    </div>
+    <div id="signin-panel" class="form-horizontal hide">
+      <div class="control-group">
+        <label class="control-label">email</label>
+        <div class="controls">
+          <input type="text" id="signin-panel-email" placeholder="email">
+          <br>
+          <span id="signin-email-err" class="err">(email address is wrong)</span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">password</label>
+        <div class="controls">
+          <input type="password" id="signin-panel-pass" placeholder="password">
+          <br>
+          <span id="signin-pass-err" class="err">(email address or password is wrong)</span>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <label class="checkbox">
+            <input type="checkbox" name="signin-panel-rememberme">
+            remember me for 30 days
+          </label>
+        </div>
+      </div>
+    </div>
+    <div id="after-panel">please check your received mail</div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" id="user-panel-close" data-dismiss="modal">Close</button>
+    <button class="btn btn-primary" id="user-panel-button" data-call=""></button>
+  </div>
+</div>
 <div id="wrapper">
 	<div id="content">
 		<div class="content_resize clearfix">
@@ -32,7 +83,7 @@
         <li class="active"><a href="/"><i class="icon-home"></i> home</a></li>
         <li><a href="/all"><i class="icon-align-justify"></i> all items</a></li>
         <li><a href="/star"><i class="icon-star"></i> starred items</a></li>
-        <li><a href="javascript:feeds.show();"><i id="feeds_show_icon" class="icon-chevron-right"></i> feeds</a></li>
+        <li><a href="javascript:feeds.show();"><i id="feeds_show_icon" class="icon-chevron-down"></i> feeds</a></li>
       </ul>
     </div>
   </div>

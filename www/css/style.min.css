@@ -2,6 +2,10 @@
 html,body {
 	overflow: hidden;
 }
+.err {
+  display: none;
+  color: #fc3300;
+}
 .clearfix {
   zoom: 1;
 }
@@ -12,15 +16,26 @@ html,body {
   overflow: hidden;
 }
 /*header*/
-.navbar-inverse .brand {
+/* cover */
+/*
+.navbar-inverse .brand, .navbar-inverse .nav>li>a {
   color: #fff;
 }
-.navbar-inverse .brand:hover, .navbar-inverse .brand:focus {
+.navbar-inverse .brand:hover, .navbar-inverse .brand:focus,
+.navbar-inverse .nav>li>a:hover , .navbar-inverse .nav>li>a:focus {
   color: #08c;
 }
-#wrapper {
-  margin-top: 45px;
+.navbar-inverse .nav .active>a:hover, .navbar-inverse .nav .active>a:focus {
+  color: #08c;
 }
+.navbar-inverse .nav .active>a, .navbar-inverse .nav .active>a:hover, .navbar-inverse .nav .active>a:focus {
+  color: #08c;
+  background-color: #1b1b1b;
+}
+#wrapper {
+  margin-top: 43px;
+}
+*/
 /*search*/
 #search {
   width: 185px;
@@ -70,6 +85,12 @@ tr .active {
   background-repeat: no-repeat;
   background-position: center center !important;
 }
+/* cover */
+/*
+.table-hover tbody tr:hover>td, .table-hover tbody tr:hover>th {
+  background-color: #eaf0ff;
+}
+*/
 /*subpage*/
 .subpage {
   width: 320px;

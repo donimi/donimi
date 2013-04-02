@@ -15,43 +15,39 @@
     <link rel="shortcut icon" href="/img/favicon.png">
   </head>
   <body>
+    <div id="internal-err-panel" class="modal hide fade" tabindex="-1" role="dialog">
+      <div class="modal-header">
+        <!--
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        -->
+        <h3>internal error</h3>
+      </div>
+      <div class="modal-body">
+        sorry,server is temporarily unavailable.
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">Close</button>
+      </div>
+    </div>
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="/">donimi</a>
+          <!--
           <div id="search">
             <input type="text" id="keyword"><button id="searchbutton" title="search"></button>
           </div>
+          -->
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <!--
               <li>
-                <a href="/register">register</a>
+                <a href="javascript:user.show('register');">register</a>
               </li>
               <li>
-                <a href="/login">login</a>
-              </li>
-              -->
-              <li>
-                <a href="/account">account</a>
-              </li>
-              <li>
-                <a href="/logout">logout</a>
-              </li>
-              <li>
-                <a href="/getpro">get pro!</a>
+                <a href="javascript:user.show('signin');">sign in</a>
               </li>
             </ul>
           </div>
-          <!--
-          <?php if(!empty($this->user)):?>
-          <div class="logout butt" id="logout">logout</div>
-          <div class="user butt" id="user"><?php echo $this->user['name'];?></div>
-          <?php else:?>
-          <div class="logout butt" id="login">login</div>
-          <div class="user butt" id="register">register</div>
-          <?php endif;?>
-          -->
         </div>
       </div>
     </div>

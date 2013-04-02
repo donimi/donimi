@@ -105,34 +105,8 @@ class func_core{
     return $output;
   }
 
-  static public function valid($type, $val){
-    $valided = true;
-    $val = trim($val);
-    switch($type){
-      case 'null':
-        $valided = $val == null ? true : false;
-        break;
-      case 'notnull':
-        $valided = $val != null ? true : false;
-        break;
-      case 'isemail':
-        $filter = '/^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/';
-        $valided = preg_match($filter, $val) ? true : false;
-        break;
-      case 'ispassword':
-        $filter = '/^(?![^a-zA-Z]+$)(?!\D+$).{6,}$/';
-        $valided = preg_match($filter, $val) ? true : false;
-        break;
-      default:
-        $intype = (int)$type;
-        if($intype == $type){
-          $valided = mb_strlen($val, 'UTF-8') == $intype ? true : false;
-        } else {
-          $valided = $val == $type ? true : false;
-        }
-        break;
-    }
-    return $valided;
+  static public function getconfuse(){
+    return '123456...654321!!!123456|||654321';
   }
 
   static public function getsys($name){

@@ -70,9 +70,11 @@ if(isset($uriarr[1])){
     $i = 2;
   }
   $get = array();
-  for($i;;$i++){
+  for($i;;$i+=2){
     if(isset($uriarr[$i])){
-      $get[] = $uriarr[$i];
+      $j = $i + 1;
+      $per[$uriarr[$i]] = isset($uriarr[$j]) ? $uriarr[$j] : '';
+      $get = array_merge($get, $per);
     } else {
       break;
     }
