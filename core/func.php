@@ -109,8 +109,12 @@ class func_core{
     return '123456...654321!!!123456|||654321';
   }
 
-  static public function getsys($name){
+  static public function getsys($name = null){
     $sysconf = conf_core::get('sys');
-    return isset($sysconf[$name]) ? $sysconf[$name] : '';
+    if($name == null){
+      return $sysconf;
+    } else {
+      return isset($sysconf[$name]) ? $sysconf[$name] : '';
+    }
   }
 }

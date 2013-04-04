@@ -36,10 +36,6 @@ class app_core extends io_core{
     return true;
   }
 
-  public function head(){
-    return $this->tpl->fetch('head.html');
-  }
-
   public function header(){
     return $this->tpl->fetch('header.html');
   }

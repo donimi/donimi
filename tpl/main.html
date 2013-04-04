@@ -52,28 +52,26 @@
     <button class="btn btn-primary" id="user-panel-button" data-call=""></button>
   </div>
 </div>
-<div id="wrapper">
+<div id="wrapper" class="container">
 	<div id="content">
-		<div class="content_resize clearfix">
-			<table class="table table-hover">
-  			<tbody>
-          <?php $i = 1;?>
-  				<?php foreach($this->items as $item):?>
-  				<tr id="tr-<?php echo $i;?>">
-  					<td width="25" id="td-star-<?php echo $i;?>" class="td-star td-star-e" data-id="<?php echo $i;?>"></td>
-  					<td width="230" class="td-col" data-id="<?php echo $i;?>"><?php echo $this->sitetitle;?></td>
-  					<td class="td-col" data-id="<?php echo $i;?>"><?php echo $item['title'];?></td>
-  					<td width="120" class="td-col" data-id="<?php echo $i;?>"><?php echo $item['date'];?></td>
-  				</tr>
-          <?php $i++;?>
-  				<?php endforeach;?>
-  			</tbody>
-  		</table>
-	  </div>
+		<table class="table table-hover">
+			<tbody>
+        <?php $i = 1;?>
+				<?php foreach($this->items as $item):?>
+				<tr id="tr-<?php echo $i;?>">
+					<td width="25" id="td-star-<?php echo $i;?>" class="td-star td-star-e" data-id="<?php echo $i;?>"></td>
+					<td width="230" class="td-col" data-id="<?php echo $i;?>"><?php echo $this->sitetitle;?></td>
+					<td class="td-col" data-id="<?php echo $i;?>"><?php echo $item['title'];?></td>
+					<td width="120" class="td-col" data-id="<?php echo $i;?>"><?php echo $item['date'];?></td>
+				</tr>
+        <?php $i++;?>
+				<?php endforeach;?>
+			</tbody>
+		</table>
   </div>
 </div>
 <div class="subpage clearfix" id="subpage">
-  <div class="subpage_resize">
+  <div class="subpage-resize">
     <div id="addfeed-panel">
       <input type="text" placeholder="add new feed">
       <button class="btn btn-primary">add</button>
@@ -87,8 +85,8 @@
       </ul>
     </div>
   </div>
-  <div class="subpage_ctrol">
-    <button id="subpage_button" data-status="show"><i class="icon-chevron-right"></i></button>
+  <div class="subpage-ctrol">
+    <button id="subpage-button" data-status="show"><i class="icon-chevron-right"></i></button>
   </div>
 </div>
 <?php echo $this->footer;?>
