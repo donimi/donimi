@@ -81,7 +81,16 @@
         <li class="active"><a href="/"><i class="icon-home"></i> home</a></li>
         <li><a href="/all"><i class="icon-align-justify"></i> all items</a></li>
         <li><a href="/star"><i class="icon-star"></i> starred items</a></li>
-        <li><a href="javascript:feeds.show();"><i id="feeds_show_icon" class="icon-chevron-down"></i> feeds</a></li>
+        <li>
+          <a href="javascript:feeds.show();">
+            <i id="feeds_show_icon" class="icon-chevron-down"></i> feeds
+          </a>
+          <ul id="feeds-panel" class="nav nav-list">
+            <?php for($i=0;$i<100;$i++):?>
+            <li><a href=""><img src="http://www.ruanyifeng.com/favicon.ico" width="16" height="16"> 阮一峰的个人网站</a></li>
+            <?php endfor;?>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
