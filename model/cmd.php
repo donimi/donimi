@@ -9,7 +9,7 @@ class cmd_model extends model_core {
     $now = time();
     $sql = "SELECT * FROM `{$this->table}` WHERE `start` <= $now AND `status` = 'waiting'
       ORDER BY `created` LIMIT 1";
-    $query = $this->db->query($sql);
+    $query = db_core::getinstance()->query($sql);
     return $query->fetch(PDO::FETCH_ASSOC);
   }
 
@@ -23,7 +23,7 @@ class cmd_model extends model_core {
       $bind[':status'] = $status;
     }
     $sql .= " LIMIT 1";
-    $sth = $this->db->prepare($sql);
+    $sth = db_core::getinstance()->prepare($sql);
     $bind[':app'] = $app;
     $bind[':param'] = $param;
     $sth->execute($bind);
